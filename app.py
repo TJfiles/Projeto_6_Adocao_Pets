@@ -6,7 +6,7 @@ from datetime import datetime
 
 # https://resend.com/onboarding
 # # Chave API para enviar email com o RESEND
-resend.api_key = "re_QHSyYexC_7trDcCmh59q5GyudAZdAd66f"
+resend.api_key = "SUA_CHAVE_API"
 
 app = Flask(__name__)
 
@@ -30,7 +30,7 @@ def index():
 
         r = resend.Emails.send({
                 "from": "onboarding@resend.dev",
-                "to": 'johnny.datascientist@gmail.com',
+                "to": 'SEU_EMAIL',
                 "subject": f"Solicitação de adoção {nome}",
                 "html": f"Email:{email}\n{mensagem}"
             })
@@ -47,3 +47,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
